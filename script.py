@@ -2,9 +2,13 @@ import pandas as pd
 import time
 import json
 import paho.mqtt.client as mqtt
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# File path inside the project directory
+file_path = os.path.join(BASE_DIR, "data", "punch_data_updated.xlsx")
 
 # Load the Excel file
-file_path = r"\punch_data_updated.xlsx"
 df = pd.read_excel(file_path)
 
 # AWS IoT Core MQTT Configurations
